@@ -1,0 +1,21 @@
+{
+  "name": "practical6B",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.17.1",
+    "joi": "^17.6.0",
+    "lodash": "^4.17.21",
+    "serverless-http": "^2.7.0",
+    "serverless-offline": "^8.8.0",
+    "jest": "^28.1.0"
+  },
+  "devDependencies": {
+    "serverless-middleware": "^3.0.0",
+    "supertest": "^6.2.3"
+  }
+}

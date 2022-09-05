@@ -1,0 +1,109 @@
+service: practical6B
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+plugins: 
+  - serverless-offline
+  - serverless-middleware
+
+functions:
+  addUser:
+    handler: controller/user/user.controller.addUser
+    events:
+      - httpApi:
+          path: /addUser
+          method: post
+    middleware:
+      pre: controller/user/user.validator.userValidation
+  addProject:
+    handler: controller/project/project.controller.addProject
+    events:
+      - httpApi:
+          path: /addProject
+          method: post
+    middleware:
+      pre: controller/project/project.validator.projectValidation
+  viewUser:
+    handler: controller/user/user.controller.viewUser
+    events:
+      - httpApi:
+          path: /viewUser/{userId}
+          method: get
+  viewUsers:
+    handler: controller/user/user.controller.viewUsers
+    events:
+      - httpApi:
+          path: /viewUsers
+          method: get
+  updateUser:
+    handler: controller/user/user.controller.updateUser
+    events:
+      - httpApi:
+          path: /updateUser/{userId}
+          method: put
+  deleteUser:
+    handler: controller/user/user.controller.deleteUser
+    events:
+      - httpApi:
+          path: /deleteUsers/{userId}
+          method: delete
+  
+  viewProject:
+    handler: controller/project/project.controller.viewProject
+    events:
+      - httpApi:
+          path: /viewProject/{projectId}
+          method: get
+  viewProjects:
+    handler: controller/project/project.controller.viewProjects
+    events:
+      - httpApi:
+          path: /viewProjects
+          method: get
+  updateProject:
+    handler: controller/project/project.controller.updateProject
+    events:
+      - httpApi:
+          path: /updateProject/{projectId}
+          method: put
+  deleteProject:
+    handler: controller/project/project.controller.deleteProject
+    events:
+      - httpApi:
+          path: /deleteProject/{projectId}
+          method: delete
+  addTask:
+    handler: controller/task/task.controller.addTask
+    events:
+      - httpApi:
+          path: /addTask
+          method: post
+    middleware:
+      pre: controller/task/task.validator.taskValidation
+  viewTask:
+    handler: controller/task/task.controller.viewTask
+    events:
+      - httpApi:
+          path: /viewTask/{taskId}
+          method: get
+  viewTasks:
+    handler: controller/task/task.controller.viewTasks
+    events:
+      - httpApi:
+          path: /viewTasks
+          method: get
+  updateTask:
+    handler: controller/task/task.controller.updateTask
+    events:
+      - httpApi:
+          path: /updateTask/{taskId}
+          method: put
+  deleteTask:
+    handler: controller/task/task.controller.deleteTask
+    events:
+      - httpApi:
+          path: /deleteTask/{taskId}
+          method: delete

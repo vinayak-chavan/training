@@ -1,0 +1,475 @@
+{
+	"info": {
+		"_postman_id": "cadd076f-a95c-4085-bd95-7cac74b0260e",
+		"name": "jobportal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create job",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"title\": \"software engineer\",\r\n\t\"department\": \"web developer\",\r\n\t\"description\": \"ABC\",\r\n\t\"package\": \"5-6 LPA\",\r\n\t\"qualification\": \"BE/BTech\",\r\n\t\"experience\": \"2 years\",\r\n\t\"location\": \"Surat\",\r\n    \"company\": \"tcs\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/createJob",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"createJob"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update job",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\":\"xyz\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/updateJob/623060c8ac029a21712b3773",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"updateJob",
+						"623060c8ac029a21712b3773"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view jobs by company",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/viewJob/6231e619e551fef756f1e833",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"viewJob",
+						"6231e619e551fef756f1e833"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view all jobs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/viewJob/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"viewJob",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete job",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8000/deleteJob/623067eef68ec89e8f429427",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"deleteJob",
+						"623067eef68ec89e8f429427"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "company register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\":\"infosys\",\r\n\t\"emailID\":\"hr@infosys.com\",\r\n\t\"password\":\"hr@infosys.com\",\r\n\t\"location\":\"pune\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/compRegister",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"compRegister"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update company",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"location\":\"bhavnagar\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/updateComp/6230d03d101e6c322d5ab926",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"updateComp",
+						"6230d03d101e6c322d5ab926"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete company",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/deleteComp/6230c1de55d262c582fb4727",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"deleteComp",
+						"6230c1de55d262c582fb4727"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view company",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/viewComp",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"viewComp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "company login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"emailID\":\"hr@infosys.com\",\r\n    \"password\":\"hr@infosys.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/compLogin",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"compLogin"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/userRegister",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"userRegister"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"emailID\":\"m@gamail.com\",\r\n    \"password\":\"mru\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/userLogin",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"userLogin"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/deleteuser/6230e5d9cf1ae9967515f9b6",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"deleteuser",
+						"6230e5d9cf1ae9967515f9b6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"location\":\"kutch\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/updateuser/6230e30569436022f8da0165",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"updateuser",
+						"6230e30569436022f8da0165"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/viewuser/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"viewuser",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "apply for job",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/applyForJob/6231f8a657574320c855af39?userID=6231656040988f1d11ea4956",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"applyForJob",
+						"6231f8a657574320c855af39"
+					],
+					"query": [
+						{
+							"key": "userID",
+							"value": "6231656040988f1d11ea4956"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view appliers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiJockBpbmZvc3lzLmNvbSIsImlhdCI6MTY0NzUwNTI0MywiZXhwIjoxNjQ4MTEwMDQzfQ.gZ8egVMQY1djM7cFRcfOH6-QGfj4FeHeuCIuqX6hWjo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/viewApplier/6231f8a657574320c855af39",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"viewApplier",
+						"6231f8a657574320c855af39"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload resume",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "resume",
+							"type": "file",
+							"src": "/E:/RTO/Form 1.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/uploadResume/623164af23c2887e2b2fb040",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"uploadResume",
+						"623164af23c2887e2b2fb040"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
