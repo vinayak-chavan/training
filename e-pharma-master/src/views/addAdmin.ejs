@@ -1,0 +1,95 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="/public/css/blogcss.css" />
+    <%- include('../views/partials/links'); %>  
+   
+</head>
+
+<body>
+    <div class="bgimg">
+        <nav class="navbar navbar-expand-sm bg-light nav-dark">
+            <div class="container">
+                <a href="" class="navbar-brand"><img
+                        src="https://www.onblastblog.com/wp-content/uploads/2017/08/blogger-logo.jpg"
+                        style="width:100px; height: 50px;"> </a>
+                <button class="navbar-toggler btn btn-secondary" type="button" data-toggle="collapse"
+                    data-target="#collapsenavbar">
+                    <span class="navbar-toggler-icon "></span>
+                </button>
+    
+                <div class="collapse navbar-collapse text-center" id="collapsenavbar">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item px-2">
+                            <a href="/allcategory" class="nav-link text-dark"> HOME </a>
+                        </li>
+                        <li class="nav-item px-2">
+                            <a href="/logout" class="nav-link text-dark"> LOGOUT </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    
+    <div class="container mt-4">
+      <h2 class="text-center">Add Admin Here</h2>
+      <div class="d-flex justify-content-center">
+          <form class="mt-3 col-md-6" id="addadmin" action="/admin" method="post" enctype="multipart/form-data">
+              <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="name" class="form-control" id="name" name="name" placeholder="Name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email ID</label>
+                <input type="email" class="form-control" id="email" name="emailID" placeholder="Email" required>
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="password" required>
+              </div>
+              <div>
+                  <button type="submit" class="btn btn-info mt-2">Submit</button>
+                  <button type="submit" class="btn btn-danger mt-2">Back</button>
+              </div>
+          </form>
+      </div>
+
+
+
+    <%- include('../views/partials/footer'); %>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script>
+      jQuery("#addadmin").validate({
+            rules: {
+                name: "required",
+                email: {
+                    required: true,
+                    email: true
+                },
+                password: {
+                    required: true,
+                    minlength: 5
+                },
+            },
+            messages: {
+                username: "Please enter name",
+                emailID: {
+                    required: "Please enter email",
+                    email: "Please enter valid email"
+                },
+                password: {
+                    required: "Please enter password",
+                    minlength: "Password must be contains 5 char"
+                }
+            },
+            submitHandler: function (form) {
+                form.submit();
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="/public/css/blogcss.css" />
+    <%- include('../views/partials/links'); %>  
+   
+</head>
+
+<body>
+    <div class="bgimg">
+        <nav class="navbar navbar-expand-sm bg-light nav-dark">
+            <div class="container">
+                <a href="" class="navbar-brand"><img
+                        src="https://www.onblastblog.com/wp-content/uploads/2017/08/blogger-logo.jpg"
+                        style="width:100px; height: 50px;"> </a>
+                <button class="navbar-toggler btn btn-secondary" type="button" data-toggle="collapse"
+                    data-target="#collapsenavbar">
+                    <span class="navbar-toggler-icon "></span>
+                </button>
+    
+                <div class="collapse navbar-collapse text-center" id="collapsenavbar">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item px-2">
+                            <a href="/category" class="nav-link text-dark"> ADD CATEGORY </a>
+                        </li>
+                        <li class="nav-item px-2">
+                            <a href="viewOrders" class="nav-link text-dark"> VIEW ORDERS </a>
+                        </li>
+                        <li class="nav-item px-2">
+                            <a href="/logout" class="nav-link text-dark"> LOGOUT </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    
+
+    <section class="pt-5 justify-content-center position-relative ">
+        <div class="container">
+            <div class="row justify-content-center">
+                
+                    <div class="card">
+                        <img class="card-img-top"
+                            src="https://charmouth.org/charmouth_village/wp-content/uploads/2016/07/SE3-286x180.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Lion</h5>
+                            <a href="" class="btn btn-primary">Update</a>
+                            <a href="" class="btn btn-danger" >Delete</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top"
+                            src="https://charmouth.org/charmouth_village/wp-content/uploads/2016/07/SE3-286x180.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Lion</h5>
+                            <a href="" class="btn btn-primary">Update</a>
+                            <a href="" class="btn btn-danger" >Delete</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top"
+                            src="https://charmouth.org/charmouth_village/wp-content/uploads/2016/07/SE3-286x180.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Lion</h5>
+                            <a href="" class="btn btn-primary">Update</a>
+                            <a href="" class="btn btn-danger" >Delete</a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+
+    <%- include('../views/partials/footer'); %>
+</body>
+
+</html>
