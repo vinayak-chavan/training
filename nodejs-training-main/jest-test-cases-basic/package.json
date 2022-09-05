@@ -1,0 +1,19 @@
+{
+  "name": "test-cases",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "jest": "^28.1.0"
+  },
+  "devDependencies": {
+    "supertest": "^6.2.3"
+  }
+}
