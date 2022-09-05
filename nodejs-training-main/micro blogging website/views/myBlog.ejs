@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/blogcss.css" />
+    <%- include('../views/partials/links'); %>  
+</head>
+
+<body>
+    <%- include('../views/partials/header'); %>
+        <section class="pt-5 justify-content-center position-relative ">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <% blogs.forEach(blog=> { %>
+                        <div class="card">
+                            <img class="card-img-top"
+                                src="/uploads/<%=blog.photo%>" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= blog.title %></h5>
+                                <p class="card-text"><%= blog.description.slice(0,99) %></p>
+                                <a href="/updateBlog/<%= blog._id %>" class="btn btn-primary">Update</a>
+                                <a href="/deleteBlog/<%= blog._id %>" class="btn btn-danger" >Delete</a>
+                            </div>
+                        </div>
+                    <% }) %>
+                </div>
+            </div>
+        </section>
+    <%- include('../views/partials/footer'); %>
+
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<html>
+
+<head>
+
+  <%- include('../views/partials/links'); %>
+
+</head>
+
+<body>
+  <%- include('../views/partials/userHeader'); %>
+
+    <div class="container" style="margin-top: 70px;">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Email ID</th>
+            <th>Following</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% users.forEach(user=> { %>
+            <tr>
+              <td>
+                <%= user.username %>
+              </td>
+              <td>
+                <%= user.emailID %>
+              </td>
+              <td> <label class="ml-1" id="followingcount_<%= user._id %>">
+                  <%= user.following.length %>
+                </label> </td>
+              <td>
+                <button class="btn btn-primary" onclick="follow('<%= user._id %>')"> Follow </button>
+                <button class="btn btn-danger" onclick="unfollow('<%= user._id %>')"> Unfollow </button>
+              </td>
+            </tr>
+            <% }) %>
+        </tbody>
+      </table>
+    </div>
+
+    <%- include('../views/partials/footer'); %>
+
+      <script>
+        const follow = (id) => {
+          fetch('/follow', {
+            method: "post",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              userId: id
+            })
+          }).then(res => res.json())
+            .then(result => {
+              jQuery('#followingcount_' + id).text(result.followingCount)
+
+            }).catch(err => {
+              console.log(err)
+            })
+        }
+        const unfollow = (id) => {
+          fetch('/unfollow', {
+            method: "post",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              userId: id
+            })
+          }).then(res => res.json())
+            .then(result => {
+              jQuery('#followingcount_' + id).text(result.followingCount)
+
+            }).catch(err => {
+              console.log(err)
+            })
+        }
+      </script>
+
+</body>
+
+</html>

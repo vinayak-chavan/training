@@ -1,0 +1,92 @@
+
+// Create new databse
+
+create database trainee;
+CREATE DATABASE
+
+
+// Use database
+
+\c trainee
+You are now connected to database "trainee" as user "postgres".
+
+//Create new table
+
+create table nodetrainee(id int primary key, fullname varchar(20) not null, college varchar(20) not null);
+CREATE TABLE
+
+
+// Insert single row in table
+
+trainee=# insert into nodetrainee values(1, 'vinayak chavan', 'vgec');
+INSERT 0 1
+trainee=# insert into nodetrainee values(2, 'pradip prajapati', 'vgec');
+INSERT 0 1
+
+
+// Insert multiple rows at a time
+insert into nodetrainee values(3, 'darshan tank', 'ldce'),(4, 'jay patel','ljit');
+INSERT 0 2
+
+
+// Display all records from table
+
+trainee=# select * from nodetrainee;
+ id |     fullname     | college
+----+------------------+---------
+  1 | vinayak chavan   | vgec
+  2 | pradip prajapati | vgec
+  3 | darshan tank     | ldce
+  4 | jay patel        | ljit
+(4 rows)
+  
+
+// Display records by specific condition
+
+ select * from nodetrainee where college='vgec';
+ id |     fullname     | college
+----+------------------+---------
+  1 | vinayak chavan   | vgec
+  2 | pradip prajapati | vgec
+(2 rows)
+
+
+// Update data in table by specific condition
+trainee=# update nodetrainee set college='ldce' where fullname='jay patel';
+UPDATE 1
+
+trainee=# select * from nodetrainee;
+ id |     fullname     | college
+----+------------------+---------
+  1 | vinayak chavan   | vgec
+  2 | pradip prajapati | vgec
+  3 | darshan tank     | ldce
+  4 | jay patel        | ldce
+(4 rows)
+
+
+// delete data from table by specific condition
+
+trainee=# delete from nodetrainee where id=2;
+DELETE 1
+
+trainee=# delete from nodetrainee where college='vgec';
+DELETE 1
+
+trainee=# select * from nodetrainee
+trainee-# ;
+ id |   fullname   | college
+----+--------------+---------
+  3 | darshan tank | ldce
+  4 | jay patel    | ldce
+(2 rows)
+
+
+// Delete table 
+
+drop table nodetrainee;
+
+
+// Delete databse
+
+drop database trainee;
