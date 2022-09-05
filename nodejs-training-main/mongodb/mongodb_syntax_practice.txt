@@ -1,0 +1,64 @@
+//Create new database
+use trainee
+
+
+//Display all the existing databases
+show dbs
+
+
+//Insert only one record
+db.details.insertOne({_id:1, fullname:"Aayush Adeshara", college:"GEC", tech:"ROR"})
+
+
+//Display all the existing collection in database
+show collectiosn
+
+
+//Display all the records in collection
+db.details.find()
+
+
+//Display all the records in collection in more readable form
+db.details.find().pretty()
+
+
+//Added more data in collection
+db.details.insertOne({_id:2, fullname:"Akshit Modi", college:"VGEC", tech:"Devops"})
+db.details.insertOne({_id:3, fullname:"Jemis Maru", college:"DDIT", tech:"VueJS"})
+db.details.insertOne({_id:4, fullname:"Ishita Shah", college:"LDCE", tech:"ReactJS"})
+
+
+//Insert only multiple records at a time
+db.details.insertMany([{_id:6, fullname:"Darshan Tank", college:"SCET", tech:"Java"}, 
+					   {_id:7, fullname:"Dhruval Mayavanshi", college:"LDCE", tech:"UIUX"}, 
+					   {_id:8, fullname:"Vinayak Chavan", college:"VGEC", tech:"NodeJS"}])
+
+
+//Search data by particular parameter
+db.details.find({_id:2})
+db.details.find({fullname:"Vinayak Chavan"})
+
+
+//Search only one data
+db.details.find({tech:"VueJS"}).pretty().limit(1)
+
+
+//Showing only selected fields
+db.details.find({_id:2}, {name:1})
+
+
+//Delete data by condition
+db.details.deleteMany({_id:1})
+db.deleils.deleteMany({_id:4, college:"DDIT"})
+
+
+//Delete all data in collection
+db.details.deleteMany({ })
+
+
+//Update only one data
+db.details.updateOne({name:"Akshit Modi"}, {$set: {college:"SPDM"}})
+
+
+//Update multiple data
+db.details.updateMany({college: "VGEC"}, {$set: {tech:"PHP"}})
